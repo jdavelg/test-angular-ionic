@@ -1,0 +1,76 @@
+
+
+
+
+
+
+<ion-content>
+  <ion-grid>
+  <ion-col class="ion-align-items-center .ion-text-center" size="6" size-sm>
+ 
+      <div style="margin: 0px auto !important; text-align: center; font-weight: bold; font-size: 45px; margin-top: 100px !important;">
+      FACI<span style="color:#2dd36f">O</span>
+      </div>
+ 
+  <ion-row >
+    <ion-col class="ion-align-self-center" style="height: 100%">
+      <form>    
+        <ion-item lines="full">
+          <ion-icon name="mail-open-outline"></ion-icon>
+          <ion-input type="text" #email required></ion-input>
+        </ion-item> 
+    
+        <ion-item lines="full">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input type="password" #password required></ion-input>
+        </ion-item>
+    
+
+        <ion-item lines="none">
+          
+          <ion-checkbox color="success"  checked="true"></ion-checkbox>
+          <ion-label><span style="font-size: small; margin-left: 10px;">Remember me</span> </ion-label>
+          <a [routerLink]="[ '/forgot-password' ]" color="success" style="text-decoration: none; color: #2dd36f; font-size: small;"> forgot password?</a>
+        </ion-item>
+        
+
+        <ion-row>
+          <ion-col> 
+          <ion-button type="submit" (click)="logIn(email, password)" color="success" expand="block">Login</ion-button>
+          </ion-col>
+        </ion-row>
+    
+        <span class="divider line one-line">or</span>
+    
+        <ion-row>
+          <ion-col> 
+            <ion-button 
+             type="submit" 
+             color="danger"
+             size="small"
+             expand="full"
+             (click)="authService.GoogleAuth()" 
+             >
+               Login with Google
+            </ion-button>
+          
+          </ion-col>
+       <!--    <ion-router-link color="success">
+ir a google
+          </ion-router-link> -->
+        </ion-row>
+ 
+      </form>
+
+<div style="font-size: small;  margin-top: 60px; text-align: center;">
+  Dont have an account?  <a [routerLink]="[ '/registration' ]" color="success" style="text-decoration: none; color: #2dd36f;"> Signup here</a>
+</div>
+
+    </ion-col>
+     </ion-row>
+    
+ 
+
+</ion-col>
+</ion-grid>
+</ion-content>
